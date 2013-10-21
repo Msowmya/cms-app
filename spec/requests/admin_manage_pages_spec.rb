@@ -25,7 +25,8 @@ describe "Manage Pages", :type => :feature do
       expect(page).to have_content("Create new page")
       fill_in 'Name', with: "A test page"
       fill_in 'Title', with: "A test page"
-      click_on("Save")
+      click_on('Save')
+      expect(page).to have("A test page")
     end
   end
 end
