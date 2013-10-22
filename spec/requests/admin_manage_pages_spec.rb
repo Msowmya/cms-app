@@ -44,6 +44,16 @@ describe "Manage Pages", :type => :feature do
       expect(page).to have_content("A new test page")
     end
   end
+  describe "Delete page" do
+    it "should delete a page" do
+      visit_admin_path
+      Page.create(name: "home")
+      Page.create(name: "about")
+      find_link('Manage Pages').click
+
+       click_link('Delete', match: :first)
+    end
+  end
 
 end
 
