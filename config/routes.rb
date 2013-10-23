@@ -2,7 +2,12 @@ Cms::Application.routes.draw do
   get "admin/dashboard"
   root 'welcome#index'
   resources :pages
-
+  resources :products
+  get 'about' => "pages#about"
+  get 'contact' => "pages#contact"
+  get 'photos' => "pages#photos"
+  get 'blog' => "pages#blog"
+  get 'links' => "pages#links"
   get 'admin' => 'admin#dashboard', as: :admin
 
   # The priority is based upon order of creation: first created -> highest priority.
